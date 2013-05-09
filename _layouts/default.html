@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tinco.nl</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300|Roboto:400,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="http://tinco.nl/tinco.css" /> 
+    <style>
+        html {
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.4em;
+        }
+
+        #header {
+            padding: 0em;
+        }
+
+        #content {
+            width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        #content h1 {
+            text-align: center;
+        }
+
+        body * {
+            padding: .5em;
+        }
+
+        h1,h2,h3,h4,h5 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <div id="content">
+        <div id="header">
+          <h1></h1>
+        </div>
+        {{ content }}
+
+        <ul class="social">
+          <li class="github"><a href="https://github.com/d-snp"><img src="http://tinco.nl/octocat.png"/>github</a></li>
+          <li class="facebook"><a href="https://www.facebook.com/profile.php?id=100001565555351"><img src="http://tinco.nl/facebook.png"/>facebook</a></li>
+          <li class="phusion"><a href="http://phusion.nl/about"><img src="http://tinco.nl/phusion.png"/>phusion</a></li>
+          <li class="twitter"><a href="http://twitter.com/tinco"><img src="http://tinco.nl/twitter.png"/>twitter</a></li>
+        </ul>
+      </div>
+
+      <div id="footer">&nbsp;</div>
+    </div>
+    <script src="http://tinco.nl/tinco.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-15636910-1']);
+      _gaq.push(['_setDomainName', '.tinco.nl']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+    </script>
+  </body>
+</html>
+
