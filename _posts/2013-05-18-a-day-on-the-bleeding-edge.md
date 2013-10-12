@@ -1,5 +1,7 @@
-A day on the bleeding edge
-==========================
+---
+layout: post
+title: A day on the bleeding edge
+---
 
 I don't like old software, in fact I really hate it and I think we should `rm -rf` it all. But that's just my extremist view. Because of this view some time ago I decided I should forego Debian and install Arch Linux on my server ( I know, sysadmins are face palming at me ). This post is an account of how a day sometimes goes when you're really pushing the boundaries of bleeding edge software.
 
