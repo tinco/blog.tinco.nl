@@ -69,3 +69,7 @@ I run the `cabal install git-annex` command again and it starts compiling. Somew
     swapon /swap
 
 They make a swap file by reading 1024 blocks of 1 megabytes of zeroes from /dev/zero and writing them to /swap, then formatting the file as a swap file and finally enabling the swap file. Running the cabal install again and finally it finishes without problems.
+
+Update
+------
+I never uploaded this blogpost because at this point I realised I had missed something stupid and it could have been done in a much simpler way. I forgot what way that was, so I'll just leave this post here as a short story about things that can go wrong when deploying software.
