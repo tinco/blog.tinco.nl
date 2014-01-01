@@ -1,6 +1,7 @@
 ---
 layout: post
 title: A reading of Wayland
+summary: In which I read the source code of Wayland, a WIP.
 ---
 
 As some people might know, I don't like old software at all, so I'm all too eager
