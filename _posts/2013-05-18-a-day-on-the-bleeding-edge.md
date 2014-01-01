@@ -1,9 +1,10 @@
 ---
 layout: post
 title: A day on the bleeding edge
+summary: In which I try to install git-annex and dependencies in a circuitous way, and then give up.
 ---
 
-I don't like old software, in fact I really hate it and I think we should `rm -rf` it all. But that's just my extremist view. Because of this view some time ago I decided I should forego Debian and install Arch Linux on my server ( I know, sysadmins are face palming at me ). This post is an account of how a day sometimes goes when you're really pushing the boundaries of bleeding edge software.
+I don't like old software. In fact, I really hate old software and I think we should `rm -rf` it all. But that's just my extremist view. Because of this view some time ago I decided I should forego Debian and install Arch Linux on my server ( I know, sysadmins are face palming at me ). This post is an account of how a day sometimes goes when you're really pushing the boundaries of bleeding edge software.
 
 So there's this software for synchronising your data between multiple machines and the cloud called git-annex. Basically it keeps track of your files metadata in a git repository and moves and copies the files around as you see fit, sort of like dropbox but with a lot more control, you should check out his blog for more details. I figured I would give it a try for synchronising my documents and pictures, which I had been backing up by simply copying them from machine to machine every once and a while, a rather dodgy practice.
 
