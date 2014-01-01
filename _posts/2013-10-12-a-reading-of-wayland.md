@@ -4,7 +4,7 @@ title: A reading of Wayland
 summary: In which I read the source code of Wayland, a WIP.
 ---
 
-As some people might know, I don't like old software at all, so I'm all too eager
+As some people might know: I don't like old software at all. So I'm all too eager
 to ditch X and use whatever will replace it. I've long been interested in Wayland,
 but recently Ubuntu has started working on another alternative called Mir.
 
