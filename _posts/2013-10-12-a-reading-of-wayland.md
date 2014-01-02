@@ -42,7 +42,7 @@ protocol repository first.
 
 ### The wayland libraries
 
-## Compilation
+#### Compilation
 The readme promises an easy compilation, it points to the building manual which has you define
 a few extra environment variables. Because it's a C project you need to have installed the standard build
 tools which on Ubuntu are in the build-essential package. In addition to that you also need to install
@@ -51,7 +51,7 @@ also need to install doxygen, if not you can supply the `--disable-documentation
 invocation. After the autogen invocation the `make` and `make install` work without a hitch and are very
 fast, so all in all it was a pretty easy compilation.
 
-## The source
+#### The source
 
 The libraries are written in C, which is the default choice for this sort of low level software. I was
 positively surprised when I saw the directory layout. The source is in only one directory (`src/`) and
