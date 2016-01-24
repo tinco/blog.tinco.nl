@@ -1,41 +1,32 @@
 source:      .
 destination: ./public
-plugins:     ./_plugins
-layouts:     ./_layouts
+plugins_dir:     ./_plugins
+layouts_dir:     ./_layouts
 include:     ['.htaccess']
-exclude:     []
+exclude:     ['Makefile','Dockerfile']
 keep_files:  ['.git','.svn']
 timezone:    nil
 
 future:      true
 show_drafts: nil
 limit_posts: 0
-pygments:    true
+highlighter:    true
 
 permalink:     date
 paginate_path: 'page:num'
 
-markdown:      maruku
+markdown:     kramdown 
 markdown_ext:  markdown,mkd,mkdn,md
 textile_ext:   textile
 
 excerpt_separator: "\n\n"
 
 safe:        false
-watch:       false    # deprecated
-server:      false    # deprecated
 host:        0.0.0.0
 port:        4000
 baseurl:     /
 url:         http://localhost:4000
 lsi:         false
-
-maruku:
-  use_tex:    false
-  use_divs:   false
-  png_engine: blahtex
-  png_dir:    images/latex
-  png_url:    /images/latex
 
 rdiscount:
   extensions: []
@@ -49,7 +40,7 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
-  use_coderay: false
+  enable_coderay: false
 
   coderay:
     coderay_wrap: div
