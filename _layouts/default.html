@@ -4,14 +4,14 @@
     <title>Tinco.nl</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="http://tinco.nl/tinco.css" /> 
     <style>
         html {
             font-family: 'Roboto', serif;
             font-size: 1.1em;
             font-weight: 300;
-            line-height: 1.4;
-            letter-spacing: 2px;
+            line-height: 1.6;
         }
 
         #header {
@@ -29,13 +29,17 @@
             text-align: center;
         }
 
-        p,ul {
-            padding: .5em;
+        .post p, p ,ul {
+            font-family: 'Roboto Slab', serif;
+            padding-top: 0em;
+            padding-bottom: 0.6em;
+            color: #CECECE;
         }
 
         h1,h2,h3,h4,h5 {
+            text-transform: uppercase;
             font-family: 'Roboto', sans-serif;
-            font-weight: 700;
+            font-weight: 400;
             letter-spacing: 2px;
             padding: .5em;
         }
@@ -52,6 +56,14 @@
         li {
           list-style-type: none;
         }
+
+        pre, code {
+           background-color: #121212;
+        }
+
+        pre {
+           padding: 1em;
+        }
     </style>
   </head>
   <body>
@@ -62,12 +74,6 @@
         </div>
         {{ content }}
 
-        <ul class="social">
-          <li class="github"><a href="https://github.com/tinco">github</a></li>
-          <li class="facebook"><a href="https://www.facebook.com/profile.php?id=100001565555351">facebook</a></li>
-          <li class="phusion"><a href="http://phusion.nl/about">phusion</a></li>
-          <li class="twitter"><a href="http://twitter.com/tinco">twitter</a></li>
-        </ul>
       </div>
 
       <div id="footer">&nbsp;</div>
