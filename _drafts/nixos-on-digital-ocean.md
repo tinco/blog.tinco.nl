@@ -1,7 +1,7 @@
 ---
 layout: post
 title: NixOS on Digital Ocean
-summary: Demonstration of the power of NixOS by deploying a service on Digital Ocean
+summary: A demonstration with commentary of the NixOS Linux distribution by deploying a service on a node in the Digital Ocean cloud.
 ---
 
 You are a system administrator or devops person looking
