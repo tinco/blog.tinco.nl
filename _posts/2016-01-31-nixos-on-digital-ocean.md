@@ -8,15 +8,21 @@ You are a system administrator or devops person looking
 to automate the deployment of a website, a service or an application
 either somewhere on the cloud or on a private server. You might have
 experience with or at least looked at some tooling like *Chef*, *Puppet* or *Ansible*.
+Those tools will get your configuration encoded and deployed, but they all
+have some serious maintenance problems. Often its easier to just wipe
+a machine clean and run the configuration from scratch than to accumulate
+migrating cruft in your scripts.
 
+## A friendly wager
 NixOS is a Linux distribution with configuration management baked right into the core. 
 Being designed by those pesky technically superior Haskell people, it's easy to dismiss
 it as one of those experimental small time distros that stand no chance in the real world.
 But I'll wager you the following:
 
-Once you get the idea of NixOS you'll hope to never use other configuration 
-management tools again.
+*Once you get the idea of NixOS you'll hope to never use other configuration 
+management tools again.* 
 
+## Setting it up
 I won't spend too much time on convincing you with theoreticals, let's just get 
 past the first major hurdle. Using NixOS means you have to abandon your Linux distribution
 of choice. No more Debian, CentOS, Ubuntu or even Archlinux. NixOS is a total 90 degree
@@ -32,13 +38,13 @@ First, provision a *new* 1GB RAM 64-bit Ubuntu *15.10* droplet in your datacente
 ssh public key is installed so you can easily log into it over SSH. Do so as root and execute the
 following commands:
 
-```
+~~~ bash
  apt-get install -y squashfs-tools unzip
  wget https://github.com/tinco/nixos-in-place/archive/master.zip
  unzip master.zip
  cd nixos-in-place-master
  ./install -d
-```
+~~~
 
 It will ask for confirmation, press y to continue and its off. After a few minutes if everything
 went well the script will ask for your root password, enter it and confirm to reboot.
@@ -46,6 +52,8 @@ went well the script will ask for your root password, enter it and confirm to re
 So what just happened? An excellent tool written by [jeaye](https://github.com/jeaye/nixos-in-place)
 downloaded and installed NixOS next to the Ubuntu installation and then modified the boot sequence
 to boot into NixOS instead of Ubuntu.
+
+## Making yourself at home
 
 Now ssh back into your machine, you will have to clean the old machine out of your `.ssh/known_hosts` file,
  run `nano /etc/nixos/configuration.nix` and have a look around. The system you are logged into is
@@ -61,15 +69,15 @@ their own packages without bothering anyone else, but I like it when there's a f
 installed on the system per default. To get my favourite packages installed find the part that
 looks like this:
 
-```
+~~~
   # environment.systemPackages = with pkgs; [
   #   wget
   # ];
-```
+~~~
 
 And change it to look like this:
 
-```
+~~~
   environment.systemPackages = with pkgs; [
     wget
     vim
@@ -77,7 +85,7 @@ And change it to look like this:
     git
     which
   ];
-```
+~~~
 
 Save the file by hitting ctrl+o and then exit with ctl+x. Did you get everything perfectly right?
 Now is the moment of truth, but not to worry, we'll first test our brand spanking new configuration.
@@ -96,10 +104,12 @@ file again and remove the `wget` line, save it and run `nixos-rebuild switch`. N
 The configuration file does not only specify what files should exist, it also specifies that everything not in the configuration
 should *not* exist. It can't get cleaner than that.
 
+## Getting a service going
+
 So that's package management, but how about configuration management? Let's quickly configure a service.
 It will be an nginx web service inside a docker container managed by systemd. Add the following lines below the line that mentions `openssh`:
 
-```
+~~~
   virtualisation.docker.enable = true;
 
   systemd.services.myWebService = {
@@ -111,7 +121,7 @@ It will be an nginx web service inside a docker container managed by systemd. Ad
        ExecStop = ''${pkgs.docker}/bin/docker stop -t 2 nginx'';
     };
  };
-```
+~~~
 
 Save the file and run `nixos-rebuild switch`. It will run install docker and its dependencies. Build the
 systemd unit as you specified. Systemd will proceed to run docker and subsequently the `myWebService` unit.
