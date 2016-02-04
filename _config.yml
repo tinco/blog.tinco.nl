@@ -8,7 +8,7 @@ keep_files:  ['.git','.svn']
 timezone:    nil
 
 future:      false
-show_drafts: nil
+show_drafts: false 
 limit_posts: 0
 highlighter:    true
 
