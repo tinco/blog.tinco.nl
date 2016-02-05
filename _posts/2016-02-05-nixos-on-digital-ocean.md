@@ -157,3 +157,6 @@ files, setting a different hostname and running `nixos-rebuild switch`.
 
 That's the future of configuration management.
 
+[Discuss on HN](https://news.ycombinator.com/item?id=11041240)
+[Discuss on Reddit](https://www.reddit.com/r/NixOS/comments/44attf/nixos_on_digital_ocean)
+
