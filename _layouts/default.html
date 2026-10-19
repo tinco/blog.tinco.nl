@@ -8,7 +8,14 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700,900' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300..400&display=swap' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="https://tinco.nl/tinco.css" />
+    <link rel="preload" href="/fonts/ChicagoFLF.woff" as="font" type="font/woff" crossorigin>
     <style>
+        @font-face {
+            font-family: 'ChicagoFLF';
+            src: url('/fonts/ChicagoFLF.woff') format('woff');
+            font-display: swap;
+        }
+
         :root {
             --bg: #fafafa;
             --text: #2a2a2a;
@@ -82,6 +89,10 @@
 
         #content h1 {
             text-align: center;
+            font-family: 'ChicagoFLF', 'Roboto', sans-serif;
+            font-weight: normal;
+            text-transform: none;
+            letter-spacing: 0;
         }
 
         .post p, p, ul, ol {
