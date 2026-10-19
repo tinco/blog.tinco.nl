@@ -6,7 +6,7 @@ build:
 docker:
 	docker pull jekyll/jekyll:builder
 	docker run -v `pwd`:/srv/jekyll jekyll/jekyll:builder jekyll build
-	docker build -t tinco/blog.tinco.nl .
+	docker build --platform=linux/amd64 -t tinco/blog.tinco.nl .
 	docker push tinco/blog.tinco.nl
 
 docker-build-env:

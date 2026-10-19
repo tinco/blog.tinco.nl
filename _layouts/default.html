@@ -3,10 +3,47 @@
   <head>
     <title>Tinco.nl</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700,900' rel='stylesheet' type='text/css'>
+    <meta name="color-scheme" content="light dark" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700,900' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="http://tinco.nl/tinco.css" /> 
+    <link rel="stylesheet" type="text/css" href="https://tinco.nl/tinco.css" />
     <style>
+        :root {
+            --bg: #fafafa;
+            --text: #2a2a2a;
+            --muted: #444444;
+            --link: #0b6e99;
+            --code-bg: #eeeeee;
+            --heading-1: #1a7f99;
+            --heading-2: #b86e00;
+            --summary: #4d7a00;
+            --border: #2a2a2a;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #2a2a2a;
+                --text: #f8f8f2;
+                --muted: #CECECE;
+                --link: lightblue;
+                --code-bg: #121212;
+                --heading-1: #66d9ef;
+                --heading-2: #f6aa11;
+                --summary: #a6e22e;
+                --border: white;
+            }
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        .post h1, .post h3 { color: var(--heading-1); }
+        .post h2, .post h4 { color: var(--heading-2); }
+        .post .summary { color: var(--summary); }
+        #header table td.colored { background-color: var(--text); }
+
         html {
             font-family: 'Roboto', serif;
             font-size: 1.1em;
@@ -33,7 +70,7 @@
             font-family: 'Roboto Slab', serif;
             padding-top: 0em;
             padding-bottom: 0.6em;
-            color: #CECECE;
+            color: var(--muted);
         }
 
         h1,h2,h3,h4,h5 {
@@ -45,7 +82,7 @@
         }
 
         a {
-          color: lightblue;
+          color: var(--link);
           text-decoration: none;
         }
 
@@ -58,7 +95,7 @@
         }
 
         pre, code {
-           background-color: #121212;
+           background-color: var(--code-bg);
         }
 
         pre {
@@ -77,7 +114,7 @@
           width: 150px;
           height: 150px;
           border-radius: 50%; /*don't forget prefixes*/
-          border: 3px solid white;
+          border: 3px solid var(--border);
         }
 
         .mini-bio .avatar:before {
@@ -97,7 +134,7 @@
 
       <div id="footer">&nbsp;</div>
     </div>
-    <script src="http://tinco.nl/tinco.js"></script>
+    <script src="https://tinco.nl/tinco.js"></script>
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-15636910-1']);
