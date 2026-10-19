@@ -3,9 +3,10 @@
   <head>
     <title>Tinco.nl</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700,900' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300..400&display=swap' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="https://tinco.nl/tinco.css" />
     <style>
         :root {
@@ -46,28 +47,49 @@
 
         html {
             font-family: 'Roboto', serif;
-            font-size: 1.1em;
+            font-size: 100%;
             font-weight: 300;
             line-height: 1.6;
         }
 
         #header {
             padding: 0em;
+            max-width: 100%;
+        }
+
+        #header table {
+            width: 100%;
+        }
+
+        #page {
+            width: 100%;
+            top: 0;
+            padding: 3rem 0 4rem;
         }
 
         #content {
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            padding: 0 1rem;
             text-align: left;
+            overflow-wrap: break-word;
+        }
+
+        .post h1 {
+            font-size: min(3.5em, 10vw);
         }
 
         #content h1 {
             text-align: center;
         }
 
-        .post p, p ,ul {
+        .post p, p, ul, ol {
             font-family: 'Roboto Slab', serif;
+            font-size: 1.125rem;
+            font-weight: 350;
+            line-height: 1.7;
+            text-wrap: pretty;
             padding-top: 0em;
             padding-bottom: 0.6em;
             color: var(--muted);
@@ -78,6 +100,8 @@
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
             letter-spacing: 2px;
+            line-height: 1.2;
+            text-wrap: balance;
             padding: .5em;
         }
 
@@ -92,6 +116,11 @@
 
         li {
           list-style-type: none;
+        }
+
+        .post ol li {
+          list-style-type: decimal;
+          margin-bottom: 0.4em;
         }
 
         pre, code {
@@ -120,6 +149,36 @@
         .mini-bio .avatar:before {
           content: '';
         }
+
+        figure.diagram {
+          margin: 2.5em 0 3em;
+        }
+
+        figure.diagram svg.pele {
+          display: block;
+          margin: 0 auto;
+        }
+
+        figure.diagram figcaption {
+          font-family: 'Roboto Slab', serif;
+          font-size: 0.9em;
+          font-style: italic;
+          text-align: center;
+          color: var(--muted);
+          margin-top: 0.5em;
+        }
+
+        .diagram {
+          --pele-bg: var(--bg);
+          --pele-fg: var(--text);
+          --pele-muted: var(--muted);
+          --pele-line: var(--muted);
+          --pele-surface: var(--code-bg);
+          --pele-surface-alt: var(--code-bg);
+          --pele-border: var(--heading-1);
+          --pele-accent: var(--link);
+          --pele-font: 'Roboto Slab', serif;
+        }
     </style>
   </head>
   <body>
@@ -135,6 +194,39 @@
       <div id="footer">&nbsp;</div>
     </div>
     <script src="https://tinco.nl/tinco.js"></script>
+    {% if content contains 'language-mermaid' %}
+    <script src="https://cdn.jsdelivr.net/npm/pele@1.6.0/dist/pele.global.js"
+            integrity="sha384-4lHoXtKDt+x/E+htiTc83bpFWyREQzJCMudNQHirqKiCTW7Mx790I/5Q7criNZ1G"
+            crossorigin="anonymous"></script>
+    <script>
+      // Render ```mermaid blocks in posts as SVG diagrams, see https://pele.run
+      // A `title:` in the Mermaid front matter becomes a caption below the
+      // diagram instead of a heading inside it.
+      document.querySelectorAll('code.language-mermaid').forEach(function (code) {
+        var source = code.textContent;
+        var caption = null;
+        source = source.replace(/^---\n([\s\S]*?)\n---\n/, function (_, frontMatter) {
+          var rest = frontMatter.replace(/^title:\s*(.*)$/m, function (_, title) {
+            caption = title.trim().replace(/^(["'])(.*)\1$/, '$2');
+            return '';
+          }).trim();
+          return rest ? '---\n' + rest + '\n---\n' : '';
+        });
+
+        var figure = document.createElement('figure');
+        figure.className = 'diagram';
+        var diagram = document.createElement('div');
+        figure.appendChild(diagram);
+        if (caption) {
+          var figcaption = document.createElement('figcaption');
+          figcaption.textContent = caption;
+          figure.appendChild(figcaption);
+        }
+        code.parentNode.replaceWith(figure);
+        pele.mount(diagram, source);
+      });
+    </script>
+    {% endif %}
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-15636910-1']);
