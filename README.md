@@ -10,6 +10,31 @@ Colours for light and dark mode are set in `_layouts/default.html` with
 Always link external assets over `https://`, because browsers block `http://`
 assets on the https site.
 
+## Diagrams
+
+Write diagrams in posts as fenced ```` ```mermaid ```` blocks. On pages that
+contain one, `_layouts/default.html` loads [pele](https://pele.run), pinned
+to an exact version with an integrity hash, and renders each block as an SVG
+coloured with the blog's light/dark palette. A `title:` in the block's
+Mermaid front matter is shown as a caption below the diagram:
+
+````markdown
+```mermaid
+---
+title: Vibe coding.
+---
+flowchart LR
+  A[natural language prompt] -->|agentic coding| B[code]
+```
+````
+
+To upgrade pele, change the
+version and recompute the hash:
+
+```bash
+curl -s https://cdn.jsdelivr.net/npm/pele@VERSION/dist/pele.global.js | openssl dgst -sha384 -binary | openssl base64 -A
+```
+
 ## Preview locally
 
 Jekyll isn't installed locally, so build with the same Docker image the
@@ -24,6 +49,16 @@ python3 -m http.server 4000 -d public
 ```
 
 Open http://localhost:4000. Posts are at `/YYYY/MM/DD/slug.html`.
+
+While writing, run a server that includes drafts from `_drafts/` and reloads
+the browser on every save:
+
+```bash
+docker run --rm -v "$PWD":/srv/jekyll -p 4000:4000 -p 35729:35729 jekyll/jekyll:builder jekyll serve --drafts --watch --force_polling --livereload --host 0.0.0.0
+```
+
+Drafts get today's date in their URL. To publish one, move it to
+`_posts/YYYY-MM-DD-slug.md`.
 
 ## Deploy
 
