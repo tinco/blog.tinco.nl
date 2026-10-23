@@ -179,6 +179,118 @@
           margin-top: 0.5em;
         }
 
+        /* Static tweet cards, see _includes/tweet.html */
+        figure.tweet {
+          max-width: 500px;
+          margin: 2.5em auto 3em;
+          padding: 1em 1.25em;
+          border: 1px solid var(--heading-1);
+          border-radius: 12px;
+          background-color: var(--code-bg);
+          font-family: 'Roboto', sans-serif;
+          font-size: 1.0625rem;
+          font-weight: 400;
+          line-height: 1.45;
+          color: var(--text);
+        }
+
+        figure.tweet a:before,
+        a.link-card:before {
+          content: none;
+        }
+
+        figure.tweet header {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+        }
+
+        figure.tweet .tweet-author {
+          display: grid;
+          grid-template-columns: 40px auto;
+          column-gap: 0.6em;
+          align-items: center;
+          color: var(--text);
+        }
+
+        figure.tweet .tweet-author img {
+          grid-row: span 2;
+          border-radius: 50%;
+        }
+
+        figure.tweet .tweet-name {
+          font-weight: 700;
+          line-height: 1.2;
+        }
+
+        figure.tweet .tweet-handle {
+          color: var(--muted);
+          font-size: 0.9em;
+          line-height: 1.2;
+        }
+
+        figure.tweet .tweet-logo {
+          color: var(--text);
+        }
+
+        figure.tweet .tweet-text {
+          font-family: inherit;
+          font-size: inherit;
+          font-weight: inherit;
+          line-height: inherit;
+          color: inherit;
+          margin: 0.75em 0;
+          padding: 0;
+        }
+
+        figure.tweet .tweet-media {
+          display: block;
+          width: 100%;
+          height: auto;
+          border-radius: 12px;
+          margin: 0.75em 0;
+          background-color: var(--bg);
+        }
+
+        figure.tweet footer {
+          font-size: 0.9em;
+        }
+
+        figure.tweet footer a {
+          color: var(--muted);
+        }
+
+        a.link-card {
+          display: block;
+          max-width: 500px;
+          margin: 2.5em auto 3em;
+          padding: 1em 1.25em;
+          border: 1px solid var(--heading-1);
+          border-radius: 12px;
+          background-color: var(--code-bg);
+          font-family: 'Roboto Slab', serif;
+          font-size: 1.125rem;
+          line-height: 1.5;
+        }
+
+        a.link-card .site {
+          display: block;
+          font-size: 0.85em;
+          color: var(--muted);
+        }
+
+        a.link-card .title {
+          display: block;
+          font-size: 1.15em;
+          color: var(--link);
+          margin: 0.2em 0;
+        }
+
+        a.link-card .description {
+          display: block;
+          color: var(--text);
+        }
+
         .diagram {
           --pele-bg: var(--bg);
           --pele-fg: var(--text);
@@ -234,7 +346,7 @@
           figure.appendChild(figcaption);
         }
         code.parentNode.replaceWith(figure);
-        pele.mount(diagram, source);
+        pele.mount(diagram, source, { zoom: false });
       });
     </script>
     {% endif %}

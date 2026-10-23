@@ -35,6 +35,20 @@ version and recompute the hash:
 curl -s https://cdn.jsdelivr.net/npm/pele@VERSION/dist/pele.global.js | openssl dgst -sha384 -binary | openssl base64 -A
 ```
 
+## Tweets
+
+Tweets are shown as static cards in the blog's own style instead of X's
+embed widget, so there are no quoted tweets, Community Notes or X tracking
+scripts. Save a tweet once while writing (needs Node 18+):
+
+```bash
+node scripts/fetch-tweet.mjs https://x.com/dhh/status/2106810173683851564
+```
+
+This writes `_data/tweets/<id>.json`; commit it with the post. Then show it
+in the post with `{% include tweet.html id="2106810173683851564" %}`. The
+text is stored in the repo, while images and video load from X's CDN.
+
 ## Preview locally
 
 Jekyll isn't installed locally, so build with the same Docker image the
