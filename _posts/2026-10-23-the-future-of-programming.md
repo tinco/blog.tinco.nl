@@ -10,7 +10,9 @@ The idea that expressing logic in programming languages would eventually no long
 
 {% include tweet.html id="1893350391158292550" %}
 
-A couple of years ago, when large language machines first started to become good at generating and transforming code this development came as a bit of a bummer for those programmers that love dabbling with and creating niche programming languages. Their secret hope of creating the perfect programming language for humans to talk to computers with was dashed by the idea that in the future humans would simply be prompting agents to do the actual programming. Over the years we've gradually seen the industry move towards this future, from vibe coding to harness engineering and software factories. A recurring theme is that while you can let an agent accomplish a great deal using a simple prompt, to get an application to actually fit all of its requirements, those requirements need to be specified.
+A couple of years ago, when large language machines first started to become good at generating and transforming code this development came as a bit of a bummer for those programmers that love dabbling with and creating niche programming languages. Their secret hope of creating the perfect programming language for humans to talk to computers with was dashed by the idea that in the future humans would simply be prompting agents to do the actual programming.
+
+Over the years we've gradually seen the industry move towards this future. From vibe coding to harness engineering and software factories. A recurring theme is that while you can let an agent accomplish a great deal using a simple prompt, to get an application to actually fit all of its requirements those requirements need to be specified.
 
 {% include tweet.html id="2106810173683851564" %}
 
