@@ -1,0 +1,30 @@
+{% comment %}
+  A static tweet card. Save the tweet first with scripts/fetch-tweet.mjs,
+  then use {% include tweet.html id="<tweet id>" %} in a post.
+{% endcomment %}
+{% assign tweet = site.data.tweets[include.id] %}
+<figure class="tweet">
+  <header>
+    <a class="tweet-author" href="https://x.com/{{ tweet.handle }}">
+      <img src="{{ tweet.avatar }}" alt="" width="40" height="40" loading="lazy">
+      <span class="tweet-name">{{ tweet.name }}</span>
+      <span class="tweet-handle">@{{ tweet.handle }}</span>
+    </a>
+    <a class="tweet-logo" href="{{ tweet.url }}" aria-label="View on X">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+  </header>
+  <p class="tweet-text">{{ tweet.html }}{% if tweet.truncated %}… <a href="{{ tweet.url }}">Show more</a>{% endif %}</p>
+  {% for media in tweet.media %}
+    {% if media.type == "photo" %}
+      <img class="tweet-media" src="{{ media.src }}" alt="" width="{{ media.width }}" height="{{ media.height }}" loading="lazy">
+    {% elsif media.type == "gif" %}
+      <video class="tweet-media" src="{{ media.src }}" poster="{{ media.poster }}" width="{{ media.width }}" height="{{ media.height }}" autoplay loop muted playsinline></video>
+    {% else %}
+      <video class="tweet-media" src="{{ media.src }}" poster="{{ media.poster }}" width="{{ media.width }}" height="{{ media.height }}" controls preload="none" playsinline></video>
+    {% endif %}
+  {% endfor %}
+  <footer>
+    <a href="{{ tweet.url }}"><time datetime="{{ tweet.date }}">{{ tweet.date | date: "%b %-d, %Y" }}</time></a>
+  </footer>
+</figure>

@@ -1,0 +1,18 @@
+{
+  "id": "2106810173683851564",
+  "url": "https://x.com/dhh/status/2106810173683851564",
+  "name": "DHH",
+  "handle": "dhh",
+  "avatar": "https://pbs.twimg.com/profile_images/2093715898204884992/goERjC9G_bigger.jpg",
+  "date": "2026-10-04T18:14:22.000Z",
+  "html": "I've had agents implement and optimize the Campfire web app in Elixir, Go, and Rust. Yes, Ruby is the slowest. I didn't care about that when the pay-off was huge in terms of productivity and developer joy. But if you're no longer reading the code? <a href=\"https://github.com/basecamp/once-campfire\">github.com/basecamp/once-…</a>",
+  "truncated": false,
+  "media": [
+    {
+      "type": "photo",
+      "src": "https://pbs.twimg.com/media/HTzkGv5XAAAN-90.jpg",
+      "width": 1110,
+      "height": 428
+    }
+  ]
+}
