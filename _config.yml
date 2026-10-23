@@ -3,7 +3,7 @@ destination: ./public
 plugins_dir:     ./_plugins
 layouts_dir:     ./_layouts
 include:     ['.htaccess']
-exclude:     ['Makefile','Dockerfile','README.md','scripts']
+exclude:     ['Makefile','Dockerfile','README.md','scripts','nginx.conf']
 keep_files:  ['.git','.svn']
 timezone:    nil
 
