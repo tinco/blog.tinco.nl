@@ -137,3 +137,4 @@ I've been particularly fascinated by the articles in the sphere of Jackson and M
 Let me know what you think is going to be the future of programming!
 
 [Discuss on HN](https://news.ycombinator.com/item?id=50208611)
+[Discuss on Reddit](https://www.reddit.com/r/programming/comments/1xden1k/the_future_of_programming/)
