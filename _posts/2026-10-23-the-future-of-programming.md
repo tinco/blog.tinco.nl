@@ -4,7 +4,7 @@ title: The future of programming
 summary: Specification languages and systems are more than just a way for software factories to fit agentic coding to enterprise development processes, they're going to play a key role in the future of programming in general. The balance between under specification and over specification will decide that future.
 ---
 
-Specification languages and systems are more than just a way for software factories to fit agentic coding to enterprise development processes, they're going to play a key role in the future of programming in general. 
+Specification languages and systems are more than just a way for software factories to fit agentic coding to enterprise development processes. They're going to play a key role in the future of programming in general.
 
 The idea that expressing logic in programming languages would eventually no longer be part of our daily jobs has put a melancholic twist on what is the most exciting development in software since probably the internet. Now that our development processes are crystalizing, this feeling of melancholy has started to twist for me into a feeling of anticipation for the next generation of ways in which humans tell computers what to do.
 
@@ -135,3 +135,5 @@ There's interesting alternative ways of describing software such as [Alloy](http
 I've been particularly fascinated by the articles in the sphere of Jackson and Meng like [Making Software Meaningful](https://arxiv.org/html/2606.11051v1) and [What You See Is What It Does](https://arxiv.org/abs/2508.14511).
 
 Let me know what you think is going to be the future of programming!
+
+[Discuss on HN](https://news.ycombinator.com/item?id=50208611)
