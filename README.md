@@ -35,6 +35,15 @@ version and recompute the hash:
 curl -s https://cdn.jsdelivr.net/npm/pele@VERSION/dist/pele.global.js | openssl dgst -sha384 -binary | openssl base64 -A
 ```
 
+## Caching
+
+`nginx.conf` sends `Cache-Control: no-cache` for pages, the feed and
+`/images/`, so browsers revalidate them on every visit. Files in `/assets/`
+and `/fonts/` are linked from `_layouts/default.html` with `?v=<build time>`
+and cached for a year as immutable; every deploy changes that suffix. When you
+link a new asset or font from the layout, add `?v={{ asset_version }}` to its
+URL. Without the suffix it is simply revalidated each visit.
+
 ## Tweets
 
 Tweets are shown as static cards in the blog's own style instead of X's
