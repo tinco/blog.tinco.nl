@@ -1,3 +1,4 @@
+
 =========
 
 
@@ -13,7 +14,11 @@ There’s already been many approaches to this of course. When OpenAI published 
 
 While visiting customers I’ve seen many engineering teams develop shared harnesses, these days also often called software factories. On top of that there’s also many companies supplying software factories as a subscription product and many of the large software consultancies have also pivoted to developing software factories to back their consultants. 
 
-[natural language prompt] -<improves>-> [specification] -<agentic coding>-> [implementation]
+```mermaid
+flowchart LR
+  A[natural language prompt] -->|improves| B[specification]
+  B -->|agentic coding| C[implementation]
+```
 
 So far, the most common complaint about these harnesses is that they either contain mountains of markdown slop that are nearly as impossible to work trudge through and contain as much truth as misinformation about the actual system. When they don’t it’s because they’re more a set of instructions and hints on how to work in the codebase rather than specifying its requirements.
 
