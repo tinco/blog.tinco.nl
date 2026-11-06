@@ -5,11 +5,52 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700,900' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300..400&display=swap' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="https://tinco.nl/tinco.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/tinco.css" />
+    <link rel="preload" href="/fonts/roboto-slab-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/roboto-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/ChicagoFLF.woff" as="font" type="font/woff" crossorigin>
     <style>
+        /* Roboto and Roboto Slab, self-hosted from Google Fonts (latin and
+           latin-ext subsets) so pages don't wait on another host. */
+        /* Roboto, latin-ext */
+        @font-face {
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 300 700;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(/fonts/roboto-latin-ext.woff2) format('woff2');
+          unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* Roboto, latin */
+        @font-face {
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 300 700;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(/fonts/roboto-latin.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        /* Roboto Slab, latin-ext */
+        @font-face {
+          font-family: 'Roboto Slab';
+          font-style: normal;
+          font-weight: 300 400;
+          font-display: swap;
+          src: url(/fonts/roboto-slab-latin-ext.woff2) format('woff2');
+          unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* Roboto Slab, latin */
+        @font-face {
+          font-family: 'Roboto Slab';
+          font-style: normal;
+          font-weight: 300 400;
+          font-display: swap;
+          src: url(/fonts/roboto-slab-latin.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
         @font-face {
             font-family: 'ChicagoFLF';
             src: url('/fonts/ChicagoFLF.woff') format('woff');
@@ -369,7 +410,7 @@
 
       <div id="footer">&nbsp;</div>
     </div>
-    <script src="https://tinco.nl/tinco.js"></script>
+    <script src="/assets/tinco.js"></script>
     {% if content contains 'language-mermaid' %}
     <script src="https://cdn.jsdelivr.net/npm/pele@1.6.0/dist/pele.global.js"
             integrity="sha384-4lHoXtKDt+x/E+htiTc83bpFWyREQzJCMudNQHirqKiCTW7Mx790I/5Q7criNZ1G"
@@ -403,18 +444,6 @@
       });
     </script>
     {% endif %}
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-15636910-1']);
-      _gaq.push(['_setDomainName', '.tinco.nl']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-       })();
-    </script>
   </body>
 </html>
 
